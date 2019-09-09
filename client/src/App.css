@@ -1,0 +1,42 @@
+.container {
+    height: 100%;
+    width: 100%;   
+    position: relative
+}
+
+.main-container {
+    position: relative;
+    display: flex;
+    margin: 3em;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.pen-container {
+    font-size: 15px;
+    width: 20em;
+    height: 20em;
+    border-bottom: 5px solid #4FC3F7;
+    box-shadow: 1px 1px 3px 3px #141414;
+    border-radius: 1em;
+    margin: 8px;
+    background-color: #333333;
+    transition-duration: 3s
+}
+
+.pen-container:hover {
+    transform: scale(1.1);
+}
+
+#pen-id {
+    color: rgb(155, 152, 152);
+    font-family: 'Roboto', sans-serif;
+    position: relative;
+    float: left;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

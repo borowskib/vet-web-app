@@ -28,6 +28,26 @@ npm start
 
 ###### Do the same inside folder /client (inside repository). Site should open up on her own.
 #
+### 4. Folder structure:
+#### /db - database script
+#### /api -  back-end (NodeJS)
+#### /api/node_modules (NodeJS files - do not touch)
+#### /api/bin - not important, node files
+#### /api/routes - core files containing code responsible for HTTP Requests
+#### /api/views - some "jade" files. I don't know how they works. It's like node front end (we use react)
+#### /api/app.js - request calls, second most important file
+#### /api/package* - files containing dependencies needed to 'npm install'
+#### /api/pg-set.js - database info (connection)
+#### /client - front-end (ReactJS)
+#### /client/node_modules - like previous (back-end ones)
+#### /client/public - core files we don't touch a lot, but we can
+#### /client/src - our main files (main directory)
+#### /client/src/components - every component
+#### /client/src/img - images
+#### /client/src/App* - main script and styles
+#### /client/src/index* - files containing ReactDOM call
+#### /client/src/package* - as previous
+#
 ### 3. Authors:
 #### Wojciech Kubiak
 #### Bartłomiej Borowski

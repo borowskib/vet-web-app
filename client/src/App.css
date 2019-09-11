@@ -24,11 +24,12 @@
     border-radius: 1em;
     margin: 8px;
     background-color: #333333;
-    transition-duration: 3s
+    transition-duration: 2s
 }
 
 .pen-container:hover {
     transform: scale(1.1);
+    background-color: #181717;
 }
 
 #pen-id {

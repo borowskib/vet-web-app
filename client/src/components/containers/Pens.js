@@ -5,7 +5,8 @@ class Pens extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      pensResponse: []
+      pensResponse: [],
+      pig_id: ''
     };
   }
 
@@ -13,6 +14,7 @@ class Pens extends Component {
     fetch(`http://localhost:9000/`)
       .then(res => res.json())
       .then(res => this.setState({ pensResponse: res }))
+      .then(console.log(this.state.pig_id))
       .catch(err => err);
   }
 

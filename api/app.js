@@ -5,8 +5,18 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors');
 var bodyParser = require('body-parser');
+
+// test
 var testAPIRouter = require('./routes/testAPI');
+
+// routes
+var examinationsRouter = require('./routes/examinations');
+var forageRouter = require('./routes/forage');
+var globalMeasuresRouter = require('./routes/global-measures');
+var penMeasuresRouter = require('./routes/pen-measures');
 var penRouter = require('./routes/pen');
+var pigsRouter = require('./routes/pigs');
+
 var app = express();
 
 // view engine setup
@@ -20,11 +30,32 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', penRouter);
+app.use('/', testAPIRouter);
 
 // Our requests
-app.use('/testAPI', testAPIRouter);
+
+// Examinations
+app.use('/examinations', examinationsRouter);
+
+// Forage
+app.use('/forage', forageRouter);
+
+// Global measures
+app.use('/global-measures', globalMeasuresRouter);
+
+// Pen measures
+app.use('/pen-measures', penMeasuresRouter);
+
+// Pen
+app.use('/pen', penRouter);
+
+// Pigs
+app.use('/pigs', pigsRouter);
+
+//app.use('/');
+
 // catch 404 and forward to error handler
+
 app.use(function(req, res, next) {
   next(createError(404));
 });

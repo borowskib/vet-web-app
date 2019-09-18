@@ -30,9 +30,9 @@ CREATE TABLE pen_measures(
     id_pen INTEGER NOT NULL,
     pen_measure_date DATE NOT NULL,
     pen_measure_time TIME NOT NULL,
-    pen_breakdown CHAR(255) DEFAULT NULL,
+    pen_breakdown TEXT DEFAULT NULL,
     pen_dosatron SMALLINT DEFAULT NULL,
-    pen_dosatron_addition CHAR(255) DEFAULT NULL,
+    pen_dosatron_addition TEXT DEFAULT NULL,
     pen_forage INTEGER NOT NULL,
     pen_forage_qty_used FLOAT(5) DEFAULT NULL,
     pen_water SMALLINT NOT NULL,
@@ -44,11 +44,11 @@ INSERT INTO pen_measures VALUES (1, '2019-09-17', '19:00:00', 'Uszkodzone poidlo
 ----------------- PASZA --------------------
 CREATE TABLE forage(
     id_pen INTEGER NOT NULL,
-    forage_about CHAR(255) DEFAULT NULL,
+    forage_about TEXT DEFAULT NULL,
     forage_qty FLOAT(10) NOT NULL,
     forage_price FLOAT(5) NOT NULL,
     forage_creation_date DATE NOT NULL,
-    forage_producer CHAR(255) NOT NULL,
+    forage_producer TEXT NOT NULL,
     forage_expiration_date DATE NOT NULL,
     FOREIGN KEY (id_pen) REFERENCES pen(pen_id) -- ON DELETE CASCADE
 );
@@ -61,7 +61,7 @@ CREATE TABLE pigs(
     id_pig SERIAL,
     pig_number CHAR(10) PRIMARY KEY, -- we will see how much it takes to contain this number
     pig_gender GENDER NOT NULL,
-    rfid CHAR(255) DEFAULT NULL,
+    rfid CHAR(10) DEFAULT NULL,
     pig_shopping_date DATE NOT NULL,
     pig_shopping_price FLOAT(10) NOT NULL,
     pig_sale_date DATE DEFAULT NULL,
@@ -79,17 +79,17 @@ CREATE TABLE examinations(
     exam_date DATE NOT NULL,
     exam_time TIME NOT NULL,
     feces FLOAT(5) DEFAULT NULL,
-    tissue CHAR(255) DEFAULT NULL,
-    exam_result CHAR(255) DEFAULT NULL,
-    medicine CHAR(255) DEFAULT NULL,
+    tissue TEXT DEFAULT NULL,
+    exam_result TEXT DEFAULT NULL,
+    medicine TEXT DEFAULT NULL,
     medicine_qty SMALLINT DEFAULT NULL,
-    medicine_type CHAR(255) DEFAULT NULL,
+    medicine_type TEXT DEFAULT NULL,
     diarrhea ZERO_TO_THREE_RATE NOT NULL,
     weight FLOAT(2) NOT NULL,
     temperature FLOAT(3) NOT NULL,
     lameness ZERO_TO_TWO_RATE NOT NULL,
     respiratory_system ZERO_TO_THREE_RATE NOT NULL,
-    skin_changes CHAR(255) DEFAULT NULL,
+    skin_changes TEXT DEFAULT NULL,
     FOREIGN KEY (number_pig) REFERENCES pigs(pig_number) -- ON DELETE CASCADE
 );
 

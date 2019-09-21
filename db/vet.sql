@@ -30,6 +30,7 @@ INSERT INTO pen(pen_area_size) VALUES (8.56);
 ---------------- POMIAR --------------------
 CREATE TABLE pen_measures(
     id_pen INTEGER NOT NULL,
+    pen_measure_id SERIAL,
     pen_measure_date DATE NOT NULL,
     pen_measure_time TIME NOT NULL,
     pen_breakdown TEXT DEFAULT NULL,
@@ -79,7 +80,7 @@ CREATE TABLE pigs(
 
 INSERT INTO pigs (id_pen, pig_number, pig_gender, rfid, pig_shopping_date,
 pig_shopping_price, pig_sale_date, pig_selling_cost, pig_death_date)
-VALUES ( 1, 12345, 'Samiec', NULL, '2019-08-05', 400.99, '2019-09-04', 650.00, NULL);
+VALUES ( 1, 1234567890, 'Samiec', NULL, '2019-08-05', 400.99, '2019-09-04', 650.00, NULL);
 
 ----------------- BADANIE ------------------
 CREATE TABLE examinations(
@@ -105,5 +106,5 @@ CREATE TABLE examinations(
 INSERT INTO examinations (number_pig, exam_date, exam_time, feces, tissue,
 exam_result, medicine, medicine_qty, medicine_type, diarrhea, weight, temperature,
 lameness, respiratory_system, skin_changes)
-VALUES (12345, '2019-09-17', '20:00:00', NULL, NULL, NULL, NULL, NULL, NULL,
+VALUES (1234567890, '2019-09-17', '20:00:00', NULL, NULL, NULL, NULL, NULL, NULL,
   '1', 64.5, 38.5, '1', '2', NULL);

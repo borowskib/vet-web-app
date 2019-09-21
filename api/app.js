@@ -36,23 +36,31 @@ app.use('/', testAPIRouter);
 
 // Examinations
 app.use('/examinations', examinationsRouter);
+app.put('/examinations/:id', examinationsRouter);
+app.delete('/examinations/:id', examinationsRouter);
 
 // Forage
 app.use('/forage', forageRouter);
+app.use('/forage/:id', forageRouter);
+app.put('/forage/:id', forageRouter);
 
-// Global measures
+// Global measures (without ID) - CREATE, READ, UPDATE
 app.use('/global-measures', globalMeasuresRouter);
+app.use('/global-measures/:id', globalMeasuresRouter);
+app.put('/global-measures/:id', globalMeasuresRouter);
 
-// Pen measures
+// Pen measures - CREATE, READ, UPDATE
 app.use('/pen-measures', penMeasuresRouter);
+app.use('/pen-measures/:id', penMeasuresRouter);
+app.put('/pen-measures/:id', penMeasuresRouter);
+app.delete('/pen-measures/:id', penMeasuresRouter);
 
-// Pen
+// Pen - READ, UPDATE
 app.use('/pen', penRouter);
 app.use('/pen/:id', penRouter);
 app.put('/pen/:id', penRouter);
-app.delete('/pen/:id', penRouter);
 
-// Pigs
+// Pigs - CREATE, READ, UPDATE, DELETE
 app.use('/pigs', pigsRouter);
 app.use('/pigs/:id', pigsRouter);
 app.put('/pigs/:id', pigsRouter);

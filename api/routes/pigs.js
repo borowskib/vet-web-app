@@ -21,7 +21,7 @@ router.get('/:id', (req, res, next) => {
     })
 });
 
-// POST // TODO: pig_sale_date takes random date, 1 day before pig_shopping_date
+// POST
 /************************************************************
  * curl --data "id_pen=1&pig_number=1234512345&pig_gender="Samiec"&rfid=null&pig_shopping_date="2018-09-23"&pig_shopping_price=723" http://localhost:9000/pigs
  */

@@ -49,8 +49,14 @@ app.use('/pen-measures', penMeasuresRouter);
 // Pen
 app.use('/pen', penRouter);
 app.use('/pen/:id', penRouter);
+app.put('/pen/:id', penRouter);
+app.delete('/pen/:id', penRouter);
+
 // Pigs
 app.use('/pigs', pigsRouter);
+app.use('/pigs/:id', pigsRouter);
+app.put('/pigs/:id', pigsRouter);
+app.delete('/pigs/:id', pigsRouter);
 
 //app.use('/');
 

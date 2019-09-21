@@ -9,7 +9,7 @@ router.get('/', (req, res, next) => {
         if(error) {throw error}
         res.status(200).json(results.rows)
     })
-})
+});
 
 // GET - ById
 

@@ -1,23 +1,23 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var cors = require('cors');
-var bodyParser = require('body-parser');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const cors = require('cors');
+const bodyParser = require('body-parser');
 
 // test
-var testAPIRouter = require('./routes/testAPI');
+const testAPIRouter = require('./routes/testAPI');
 
 // routes
-var examinationsRouter = require('./routes/examinations');
-var forageRouter = require('./routes/forage');
-var globalMeasuresRouter = require('./routes/global-measures');
-var penMeasuresRouter = require('./routes/pen-measures');
-var penRouter = require('./routes/pen');
-var pigsRouter = require('./routes/pigs');
+const examinationsRouter = require('./routes/examinations');
+const forageRouter = require('./routes/forage');
+const globalMeasuresRouter = require('./routes/global-measures');
+const penMeasuresRouter = require('./routes/pen-measures');
+const penRouter = require('./routes/pen');
+const pigsRouter = require('./routes/pigs');
 
-var app = express();
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -48,7 +48,7 @@ app.use('/pen-measures', penMeasuresRouter);
 
 // Pen
 app.use('/pen', penRouter);
-
+app.use('/pen/:id', penRouter);
 // Pigs
 app.use('/pigs', pigsRouter);
 

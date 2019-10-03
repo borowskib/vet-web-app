@@ -6,27 +6,32 @@ CREATE TYPE GENDER AS ENUM('Samiec', 'Samica');
 ---------------- ŚRODOWISKO ------------------
 CREATE TABLE global_measures(
     global_measure_id SERIAL PRIMARY KEY,
-    global_measure_date DATE NOT NULL,
-    global_measure_time TIME NOT NULL,
-    global_nh_three SMALLINT NOT NULL,
-    global_h_two_s SMALLINT NOT NULL,
-    global_co_two SMALLINT NOT NULL,
-    global_temperature SMALLINT NOT NULL,
-    global_wetness INTEGER NOT NULL
+        global_measure_date DATE NOT NULL,
+        global_measure_time TIME NOT NULL,
+        global_nh_three SMALLINT NOT NULL,
+        global_h_two_s SMALLINT NOT NULL,
+        global_co_two SMALLINT NOT NULL,
+        global_temperature SMALLINT NOT NULL,
+        global_wetness INTEGER NOT NULL
 );
 
--- INSERT INTO global_measures (global_measure_date, global_measure_time,
--- global_nh_three, global_h_two_s, global_co_two, global_temperature,
--- global_wetness) VALUES ('2019-09-17', '18:30:00', 4, 3, 2, 23, 55);
+INSERT INTO global_measures (global_measure_date, global_measure_time,
+ global_nh_three, global_h_two_s, global_co_two, global_temperature,
+ global_wetness) VALUES ('2019-09-17', '18:30:00', 4, 3, 2, 23, 55);
 
 ---------------- KOJEC --------------------
 CREATE TABLE pen(
     pen_id SERIAL PRIMARY KEY,
     pen_area_size FLOAT(3) NOT NULL
 );
---
--- INSERT INTO pen(pen_area_size) VALUES (8.56);
---
+
+INSERT INTO pen(pen_area_size) VALUES (8.56);
+INSERT INTO pen(pen_area_size) VALUES (8.26);
+INSERT INTO pen(pen_area_size) VALUES (8.36);
+INSERT INTO pen(pen_area_size) VALUES (8.46);
+INSERT INTO pen(pen_area_size) VALUES (8.16);
+INSERT INTO pen(pen_area_size) VALUES (8.86);
+
 ---------------- POMIAR --------------------
 CREATE TABLE pen_measures(
     id_pen INTEGER NOT NULL,

@@ -6,12 +6,11 @@ class Pens extends Component {
     super(props);
     this.state = {
       pensResponse: [],
-      pig_id: ''
     };
   }
 
   getPensData() {
-    fetch(`http://localhost:9000/`)
+    fetch(`http://localhost:9000/pen`)
       .then(res => res.json())
       .then(res => this.setState({ pensResponse: res }))
       .then(console.log(this.state.pig_id))
@@ -26,9 +25,8 @@ class Pens extends Component {
     return (
       <div className="main-container">
         {this.state.pensResponse.map(resp => (
-            <div className="pen-container" key={resp.group_name}><h1 id="pen-id">{resp.group_name}</h1></div>
+            <div className="pen-container" key={resp.group_name}><h1 id="pen-id">Rozmiar: {resp.pen_area_size}m^2</h1></div>
         ))}
-        <br />
       </div>
     );
   }

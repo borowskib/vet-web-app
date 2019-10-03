@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import "./App.css";
+import GlobalMeasure from './components/containers/GlobalMeasure';
 import Pens from './components/containers/Pens';
-import Test from "./components/containers/Test";
+import PenMeasure from './components/containers/PenMeasure';
+import SinglePigData from './components/containers/SinglePigData';
+import SinglePigExamsList from './components/containers/SinglePigExamsList';
 
 class App extends Component {
   constructor(props) {
@@ -15,7 +18,12 @@ class App extends Component {
   render() {
     return (
       <div className="container">
-        {<Pens pen_id={this.state.pen_id} />}
+        <Pens pid={this.state.pen_id}/>
+        <GlobalMeasure />
+        {/*{<PenMeasure />}*/}
+        {/*{<ForageData />}*/}
+        {/*{<SinglePigData />}*/}
+        {/*{<SinglePigExam />}*/}
       </div>
     );
   }

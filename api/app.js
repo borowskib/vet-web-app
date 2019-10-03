@@ -44,7 +44,7 @@ app.use('/forage', forageRouter);
 app.use('/forage/:id', forageRouter);
 app.put('/forage/:id', forageRouter);
 
-// Global measures (without ID) - CREATE, READ, UPDATE
+// Global measures (without ID) - READ, UPDATE
 app.use('/global-measures', globalMeasuresRouter);
 app.use('/global-measures/:id', globalMeasuresRouter);
 app.put('/global-measures/:id', globalMeasuresRouter);

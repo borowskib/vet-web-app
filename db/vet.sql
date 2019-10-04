@@ -86,7 +86,7 @@ CREATE TABLE pigs(
 --
 -- INSERT INTO pigs (id_pen, pig_number, pig_gender, rfid, pig_shopping_date,
 -- pig_shopping_price, pig_sale_date, pig_selling_cost, pig_death_date)
--- VALUES ( 1, 1234567890, 'Samiec', NULL, '2019-08-05', 400.99, '2019-09-04', 650.00, NULL);
+-- VALUES ( 1, 1234567823, 'Samiec', NULL, '2019-08-05', 400.99, '2019-09-04', 650.00, NULL);
 --
 ----------------- BADANIE ------------------
 CREATE TABLE examinations(

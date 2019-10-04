@@ -16,7 +16,7 @@ const globalMeasuresRouter = require('./routes/global-measures');
 const penMeasuresRouter = require('./routes/pen-measures');
 const penRouter = require('./routes/pen');
 const pigsRouter = require('./routes/pigs');
-
+const pigsByPenRouter = require('./routes/pigs-by-pen');
 const app = express();
 
 // view engine setup
@@ -65,6 +65,9 @@ app.use('/pigs', pigsRouter);
 app.use('/pigs/:id', pigsRouter);
 app.put('/pigs/:id', pigsRouter);
 app.delete('/pigs/:id', pigsRouter);
+
+app.use('/pigs-by-pen', pigsByPenRouter);
+app.use('/pigs-by-pen/:id', pigsByPenRouter);
 
 //app.use('/');
 

@@ -64,7 +64,7 @@ router.put('/:id', (req, res, next) => {
         pig_selling_cost, pig_death_date } = req.body;
 
     pool.query(
-        'UPDATE pen SET id_pen = $1, pig_number = $2, pig_gender = $3, rfid = $4, pig_shopping_date = $5, ' +
+        'UPDATE pigs SET id_pen = $1, pig_number = $2, pig_gender = $3, rfid = $4, pig_shopping_date = $5, ' +
             'pig_shopping_price = $6 , pig_sale_date = $7, pig_selling_cost = $8, pig_death_date = $9 WHERE ' +
             'pig_number = $10',
         [ id_pen, pig_number, pig_gender, rfid, pig_shopping_date, pig_shopping_price, pig_sale_date, pig_selling_cost,

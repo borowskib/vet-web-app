@@ -5,6 +5,16 @@
     color: #000000 !important;
 }
 
+#edit-pig-form {
+    border-style: solid;
+    border-color: black;
+    border-width: 5px
+}
+
+#pigs-table-container {
+    width: 100%;
+    text-align: center;
+}
 .main-container {
     position: relative;
     display: flex;

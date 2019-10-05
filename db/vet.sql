@@ -46,11 +46,11 @@ CREATE TABLE pen_measures(
     pen_water SMALLINT NOT NULL,
     FOREIGN KEY (id_pen) REFERENCES pen(pen_id) ON DELETE CASCADE
 );
---
--- INSERT INTO pen_measures(id_pen, pen_measure_date, pen_measure_time, pen_breakdown,
--- pen_dosatron, pen_dosatron_addition, pen_forage, pen_forage_qty_used, pen_water)
--- VALUES (1, '2019-09-17', '19:00:00', 'Uszkodzone poidlo', NULL, NULL, 1, 14.9, 45);
---
+
+ INSERT INTO pen_measures(id_pen, pen_measure_date, pen_measure_time, pen_breakdown,
+ pen_dosatron, pen_dosatron_addition, pen_forage, pen_forage_qty_used, pen_water)
+ VALUES (1, '2019-09-17', '19:00:00', 'Uszkodzone poidlo', NULL, NULL, 1, 14.9, 45);
+
 ----------------- PASZA --------------------
 CREATE TABLE forage(
     id_pen INTEGER NOT NULL,
@@ -63,12 +63,12 @@ CREATE TABLE forage(
     FOREIGN KEY (id_pen) REFERENCES pen(pen_id) ON DELETE CASCADE
 );
 
---
--- INSERT INTO forage (id_pen, forage_about, forage_qty, forage_price, forage_creation_date,
--- forage_producer, forage_expiration_date)
--- VALUES (1, 'Pasza dedykowana trzodzie chlewnej z dodatkiem witamin i mineralow',
---   1000, 4.5, '2019-01-01', 'Pasnik', '2020-11-01');
---
+
+ INSERT INTO forage (id_pen, forage_about, forage_qty, forage_price, forage_creation_date,
+ forage_producer, forage_expiration_date)
+ VALUES (1, 'Pasza dedykowana trzodzie chlewnej z dodatkiem witamin i mineralow',
+   1000, 4.5, '2019-01-01', 'Pasnik', '2020-11-01');
+
 ----------------- ŚWINIE ------------------
 CREATE TABLE pigs(
     id_pen INTEGER NOT NULL,
@@ -83,11 +83,11 @@ CREATE TABLE pigs(
     pig_death_date DATE DEFAULT NULL,
     FOREIGN KEY (id_pen) REFERENCES pen(pen_id) ON DELETE CASCADE
 );
---
--- INSERT INTO pigs (id_pen, pig_number, pig_gender, rfid, pig_shopping_date,
--- pig_shopping_price, pig_sale_date, pig_selling_cost, pig_death_date)
--- VALUES ( 1, 1234567823, 'Samiec', NULL, '2019-08-05', 400.99, '2019-09-04', 650.00, NULL);
---
+
+ INSERT INTO pigs (id_pen, pig_number, pig_gender, rfid, pig_shopping_date,
+ pig_shopping_price, pig_sale_date, pig_selling_cost, pig_death_date)
+ VALUES ( 1, 1234567823, 'Samiec', NULL, '2019-08-05', 400.99, '2019-09-04', 650.00, NULL);
+
 ----------------- BADANIE ------------------
 CREATE TABLE examinations(
     number_pig CHAR(10) NOT NULL,
@@ -108,10 +108,10 @@ CREATE TABLE examinations(
     skin_changes TEXT DEFAULT NULL,
     FOREIGN KEY (number_pig) REFERENCES pigs(pig_number) ON DELETE CASCADE
 );
---
--- INSERT INTO examinations (number_pig, exam_date, exam_time, feces, tissue,
--- exam_result, medicine, medicine_qty, medicine_type, diarrhea, weight, temperature,
--- lameness, respiratory_system, skin_changes)
--- VALUES (1234567890, '2019-09-17', '20:00:00', NULL, NULL, NULL, NULL, NULL, NULL,
---   '1', 64.5, 38.5, '1', '2', NULL);
---
+
+ INSERT INTO examinations (number_pig, exam_date, exam_time, feces, tissue,
+ exam_result, medicine, medicine_qty, medicine_type, diarrhea, weight, temperature,
+ lameness, respiratory_system, skin_changes)
+ VALUES (1234567823, '2019-09-17', '20:00:00', NULL, NULL, NULL, NULL, NULL, NULL,
+   '1', 64.5, 38.5, '1', '2', NULL);
+

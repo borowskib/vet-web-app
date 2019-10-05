@@ -22,7 +22,7 @@ class EditPig extends Component {
 
     // TODO: after update, you have to change that number (while dev)
     getPigByNumber() {
-        fetch(`http://localhost:9000/pigs/1234123412`)
+        fetch(`http://localhost:9000/pigs/1234567823`)
             .then(res => res.json())
             .then(res => this.setState({ pigsByNumberResponse: res }))
             .catch(err => err);
@@ -60,7 +60,7 @@ class EditPig extends Component {
     handleSubmit = event => {
         event.preventDefault();
         axios
-            .put(`http://localhost:9000/pigs/1234123412`, {
+            .put(`http://localhost:9000/pigs/1234567823`, {
                 id_pen: this.state.id_pen,
                 pig_number: this.state.pig_number,
                 pig_gender: this.state.pig_gender,

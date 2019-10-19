@@ -13,7 +13,7 @@ class ExamTable extends Component {
             showAddExam: false,
             examResponse: [],
         };
-        this.toogleEditExam = this.toggle.bind(this);
+        this.toggleEditExam = this.toggleEditExam.bind(this);
         this.toggleAddExam = this.toggleAddExam.bind(this);
     }
 
@@ -89,7 +89,7 @@ class ExamTable extends Component {
                                 <td>{resp.respiratory_system}</td>
                                 <td>{resp.skin_changes}</td>
                             </tr>
-                            <rb.ButttonGroup arial-label="Basic exmple">
+                            <rb.ButtonGroup arial-label="Basic exmple">
                                 <rb.Button
                                     variant="primary"
                                     onClick={this.toggleEditExam}
@@ -101,7 +101,7 @@ class ExamTable extends Component {
                                 >
                                     Usuń
                                 </rb.Button>
-                            </rb.ButttonGroup>
+                            </rb.ButtonGroup>
                             </tbody>
                             ))}
                         </rb.Table>

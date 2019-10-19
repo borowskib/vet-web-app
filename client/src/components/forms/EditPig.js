@@ -87,7 +87,7 @@ class EditPig extends Component {
         return (
             <div className="edit-pig-form">
                 {this.state.pigsByNumberResponse.map(resp => (
-                    <div>
+                    <div key={`form-group${resp.pig_number}`}>
                         <rb.Form onSubmit={this.handleSubmit}>
                             <rb.FormGroup>
                                 <rb.Form>

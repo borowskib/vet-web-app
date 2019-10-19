@@ -86,7 +86,7 @@ class EditExam extends Component{
     handleSubmit = event => {
         event.preventDefault();
         axios
-            .post(`http://localhost:900/examinations`, {
+            .post(`http://localhost:9000/examinations`, {
                 number_pig: this.state.number_pig,
                 exam_id: this.state.exam_id,
                 exam_date: this.state.exam_date,
@@ -102,7 +102,7 @@ class EditExam extends Component{
                 temperature: this.state.temperature,
                 lameness: this.state.lameness,
                 respiratory_system: this.state.respiratory_system,
-                skin_changes: this.state.skin_changes,
+                skin_changes: this.state.skin_changes
             })
             .then(res => {
                 console.log(res);
@@ -288,3 +288,5 @@ class EditExam extends Component{
         )
     }
 }
+
+export default EditExam;

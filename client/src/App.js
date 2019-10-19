@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import PigsTable from './components/containers/PigsTable';
+import ExamTable from "./components/containers/ExamTable";
 
 class App extends Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class App extends Component {
     return (
       <div className="container">
         <PigsTable penID="1"/>
+        <ExamTable/>
       </div>
     );
   }
